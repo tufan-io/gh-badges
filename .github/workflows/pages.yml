@@ -11,6 +11,6 @@ jobs:
         nojekyll: true
         repo: tufan-io/gh-badges
         build_badge: "success-green"
-        coverage_badge: "100%-green"
+        coverage_badge: "99%-yellow"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
