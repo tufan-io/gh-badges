@@ -1,21 +1,29 @@
 name: 'Setup gh-pages branch'
-description: 'Creates a gh-pages branch and mounts it on the target git checkout'
-author: 'Wes Todd'
+description: 'Creates a gh-pages branch and mounts it on the target git checkout, adds badges to root of gh-branch'
+author: 'Shishir Ramam'
 inputs:
   dir:
     description: 'Directory to mount gh-pages branch in'
     default: 'gh-pages'
   initmsg:
     description: 'The commit message if creating the gh-pages branch'
-    default: 'gh-pages init'
+    default: 'gh-pages init for ci badges'
   repo:
     description: 'The github repo to push to'
-  commit:
+  commit_msg:
     description: 'Should the action commit change on the gh-pages branch'
+    default: 'building badges'
   build:
     description: 'Build command'
   nojekyll:
     description: 'Add a .nojekyll file'
+    default: false
+  build_badge:
+    description: 'Build status & color in `curl -o ./build.svg https://img.shields.io/badge/build-${status}-${color}`'
+    default: 'building-yellow'
+  coverage_badge:
+    description: 'Coverage status & color in `curl -o ./coverage.svg https://img.shields.io/badge/build-${coverage}-${color}`'    
+    default: 'unknown-yellow'
 runs:
   using: 'docker'
   image: 'Dockerfile'

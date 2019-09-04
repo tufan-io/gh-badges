@@ -1,3 +1,6 @@
+
+[![Build status](https://tufan-io.github.io/gh-badges/.badges/build.svg)](https://github.com/tufan-io/gh-badges/actions) ![Coverage](https://tufan-io.github.io/gh-badges/.badges/coverage.svg)
+
 # Setup and build a GitHub Pages branch
 
 This is a Github Action which creates an orphan `gh-pages` branch and builds

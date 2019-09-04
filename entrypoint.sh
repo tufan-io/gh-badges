@@ -26,10 +26,13 @@ if [ -n "$INPUT_BUILD" ]; then
   sh -c "$INPUT_BUILD"
 fi
 
+curl -o "./.badges/build.svg" "https://img.shields.io/badge/build-$INPUT_BUILD_BADGE"
+curl -o "./.badges/coverage.svg" "https://img.shields.io/badge/coverage-$INPUT_COVERAGE_BADGE"
+
 cd "$INPUT_DIR" || exit
 if [ -n "$INPUT_COMMIT" ]; then
   git add .
-  git commit -m "$INPUT_COMMIT"
+  git commit -m "$INPUT_COMMIT_MSG"
 fi
 git push "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$INPUT_REPO.git" gh-pages
 cd -

@@ -9,8 +9,8 @@ jobs:
       uses: ./
       with:
         nojekyll: true
-        repo: pkgjs/gh-pages
-        commit: pages build
-        build: echo "<!DOCTYPE html><html><head></head><body><h1>Hello World!</h1><p>Built from ${GITHUB_SHA}</p></body></html>" > gh-pages/index.html
+        repo: tufan-io/gh-badges
+        build_badge: "success-green"
+        coverage_badge: "100%-green"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
